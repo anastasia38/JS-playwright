@@ -7,7 +7,9 @@
   "scripts": {
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
-    "test:ui": "npx playwright test --ui"
+    "test:ui": "npx playwright test --ui",
+    "test:local": "ENV_PATH=.env.local npx playwright test",
+    "test:stage": "ENV_PATH=.env.stage npx playwright test"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
   "devDependencies": {
     "@playwright/test": "^1.55.0",
     "@types/node": "^24.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2"
   }
 }
