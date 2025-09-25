@@ -1,15 +1,19 @@
 import { defineConfig } from '@playwright/test';
-import dotenv from 'dotenv';
-
-
-dotenv.config({ path: process.env.ENV_PATH || '.env.local' });
 
 export default defineConfig({
-  use: {
-    baseURL: process.env.BASE_URL,
-    httpCredentials: {
-      username: process.env.USERNAME,
-      password: process.env.PASSWORD,
+  testDir: './tests',
+  projects: [
+    {
+      name: 'setup',                   
+      testMatch: /.*\.setup\.js/,     
     },
-  },
+    {
+      name: 'chromium',
+      use: {
+        storageState: 'storageState.json',
+        baseURL: 'https://guest:welcome2qauto@qauto.forstudy.space/'
+
+      },
+    },
+  ],
 });
