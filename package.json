@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
+    "setup": "npx playwright test tests/auth.setup.js",
+    "test": "npx playwright test tests/garage.spec.js",
     "test:headed": "npx playwright test --headed",
     "test:ui": "npx playwright test --ui",
     "test:local": "ENV_PATH=.env.local npx playwright test",
